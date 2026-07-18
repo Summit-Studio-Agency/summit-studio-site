@@ -1,0 +1,43 @@
+name: CI
+
+# Full checks on every push and every pull request — this repo had no CI
+# at all before 2026-07-17 (added alongside a broader pass fixing this
+# repo's sibling, SSA-engine, whose own CI had been silently broken since
+# that repo's flatten). No "Run tests" step: this repo has no test suite
+# (package.json has no `test` script) — lint, typecheck, and build are
+# the real gate here.
+
+on:
+  push:
+  pull_request:
+
+# Cancel an in-progress run for the same branch/PR when a new commit lands,
+# so pushing twice in a row doesn't burn double the runner time.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  summit-studio-site:
+    name: summit-studio-site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint (warnings fail the build)
+        run: npm run lint -- --max-warnings=0
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
