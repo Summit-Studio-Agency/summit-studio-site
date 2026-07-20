@@ -7,6 +7,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { PageCTA } from '@/components/seo/PageCTA';
+import { Founder } from '@/components/sections/Founder';
 import { SITE } from '@/data/site';
 import { breadcrumbsFor, generateBreadcrumbJsonLd, pageMetadata } from '@/lib/seo';
 
@@ -68,6 +69,8 @@ export default function AboutPage() {
         </Container>
       </Section>
 
+      <Founder />
+
       <Section tone="sage">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
@@ -97,7 +100,7 @@ export default function AboutPage() {
               <Reveal delay={0.1}>
                 <p className="mt-6 text-[15px] leading-relaxed text-muted">
                   Summit Studio exists to remove those barriers — with a process built to prove itself before
-                  you spend anything.
+                  you spend anything, and the same attention to detail on your tenth page as your first.
                 </p>
               </Reveal>
             </div>
@@ -110,11 +113,13 @@ export default function AboutPage() {
           <SectionHeading eyebrow="Who we build for" title="A focused starting point, not a scattershot" wide />
           <Reveal delay={0.08}>
             <p className="mt-8 text-[clamp(0.85rem,1.9vw,1.125rem)] leading-relaxed text-muted">
-              {SITE.idealCustomer} See{' '}
+              {SITE.idealCustomer} Staying focused on one kind of business, instead of taking on anything that
+              asks, is what makes the same level of care possible on every project — a repeatable system, not a
+              rushed one-off. See{' '}
               <Link href="/portfolio" className="text-primary underline-offset-2 hover:underline">
                 real example builds
-              </Link>{' '}
-              on the engine, or go straight to{' '}
+              </Link>
+              , or go straight to{' '}
               <Link href="/pricing" className="text-primary underline-offset-2 hover:underline">
                 pricing
               </Link>{' '}

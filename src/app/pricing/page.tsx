@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Check, Minus } from 'lucide-react';
 import { Section } from '@/components/ui/Section';
 import { Container } from '@/components/ui/Container';
@@ -102,9 +101,9 @@ export default function PricingPage() {
               <h3 className="font-display text-lg font-semibold text-secondary">{customPackage.name}</h3>
               <p className="mt-1.5 text-sm text-muted">{customPackage.description}</p>
               <p className="mt-1 text-2xl font-semibold text-secondary">{customPackage.setupPrice}</p>
-              <Link href="/contact" className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
+              <a href={SITE.quotesEmailHref} className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
                 Ask about a custom quote →
-              </Link>
+              </a>
             </div>
           </Reveal>
         </Container>

@@ -57,10 +57,10 @@ export default function TermsPage() {
             <section>
               <h2 className="font-display text-xl font-semibold text-secondary">The demos we link to</h2>
               <p className="mt-3 text-[clamp(0.7rem,1.5vw,0.9375rem)]">
-                Our Portfolio page links to example websites built on the Summit Studio engine. Some are shown to
-                demonstrate the platform rather than reflecting a paying client relationship, and we say so
-                plainly on that page wherever it applies. We don&rsquo;t control content changes made to those
-                sites after this page was last updated.
+                Our Portfolio page links to example websites we built. Some are shown to
+                demonstrate the quality of our work rather than reflecting a paying client relationship, and we
+                say so plainly on that page wherever it applies. We don&rsquo;t control content changes made to
+                those sites after this page was last updated.
               </p>
             </section>
 

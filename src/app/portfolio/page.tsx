@@ -10,7 +10,7 @@ import { breadcrumbsFor, generateBreadcrumbJsonLd, pageMetadata } from '@/lib/se
 
 export const metadata: Metadata = pageMetadata({
   title: `Portfolio | ${SITE.name}`,
-  description: 'Real, deployed example websites built on the Summit Studio engine — click through and look around.',
+  description: 'Real, live example websites showing the quality and craftsmanship in every Summit Studio build — click through and look around.',
   path: '/portfolio',
 });
 
@@ -29,12 +29,13 @@ export default function PortfolioPage() {
           <Breadcrumbs items={crumbs} />
           <div className="mt-8">
             <h1 className="xl:whitespace-nowrap font-display text-[clamp(1.5rem,4.2vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-secondary">
-              See the engine in action
+              See the quality for yourself
             </h1>
             <p className="mt-5 text-[clamp(0.7rem,1.5vw,1.125rem)] leading-relaxed text-muted">
-              Every site below is real and live on the Summit Studio template — not a mockup, not a screenshot.
-              These are example builds demonstrating the platform, not paying-client engagements — we&rsquo;re
-              telling you that directly rather than letting you assume otherwise. Click through and look around.
+              Every site below is real and live — not a mockup, not a screenshot. It&rsquo;s a representative
+              sample of the quality, design, and functionality included in every Summit Studio website, not a
+              paying-client engagement — we&rsquo;re telling you that directly rather than letting you assume
+              otherwise. Click through and look around, then picture your own business in its place.
             </p>
           </div>
         </Container>
@@ -55,7 +56,7 @@ export default function PortfolioPage() {
 
       <PageCTA
         heading="Want to see your own business built out?"
-        subhead="The same engine, pointed at your business — we'll show you before you decide anything."
+        subhead="The same quality, pointed at your business — we'll show you before you decide anything."
       />
     </>
   );

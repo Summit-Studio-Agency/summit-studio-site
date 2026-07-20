@@ -20,8 +20,8 @@ export function PortfolioPreview() {
           eyebrow="See it live"
           title="Real builds, not mockups"
           intro={
-            <span className="block xl:whitespace-nowrap text-[clamp(0.95rem,1.9vw,1.125rem)]">
-              Every example below is a real, deployed website on the Summit Studio engine — click through and look around.
+            <span className="block xl:whitespace-nowrap text-[clamp(0.85rem,1.9vw,1.125rem)]">
+              Every example below is a real, live site — the same quality every client gets. Click through and look around.
             </span>
           }
           maxWidthClassName="max-w-2xl lg:max-w-6xl"

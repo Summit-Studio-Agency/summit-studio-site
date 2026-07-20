@@ -8,6 +8,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { Button } from '@/components/ui/Button';
 import { DEMOS, getDemoBySlug } from '@/data/demos';
+import { SITE } from '@/data/site';
 
 /**
  * Hidden, unlisted demo landing page — reachable only if you already have
@@ -91,8 +92,8 @@ export default function DemoPage({ params }: { params: Params }) {
 
           <p className="mt-10 text-sm text-muted">
             Questions, or ready to move forward? Just reply to the message that sent you this link, or reach us at{' '}
-            <a href="mailto:summitstudioagency@gmail.com" className="font-medium text-primary underline-offset-4 hover:underline">
-              summitstudioagency@gmail.com
+            <a href={SITE.emailHref} className="font-medium text-primary underline-offset-4 hover:underline">
+              {SITE.email}
             </a>
             .
           </p>

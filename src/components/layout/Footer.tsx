@@ -81,7 +81,7 @@ export function Footer() {
               Privacy Policy
             </Link>
           </p>
-          <span className="text-surface/40">Built on the Summit Studio engine</span>
+          <span className="text-surface/40">Built by Summit Studio</span>
         </div>
       </Container>
     </footer>

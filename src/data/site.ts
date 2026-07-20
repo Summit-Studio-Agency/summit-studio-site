@@ -68,8 +68,25 @@ export const SITE = {
   description:
     'Summit Studio builds professional websites for landscaping and home-service businesses — see a real, working demo of yours before you ever commit to anything.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://summitstudioagency.com',
-  email: 'summitstudioagency@gmail.com',
-  emailHref: 'mailto:summitstudioagency@gmail.com',
+  // General/default contact address — footer, contact page, structured
+  // data, and every page's closing CTA. Purpose-specific addresses below
+  // exist for the few spots on the site with a genuinely narrower context;
+  // everywhere else uses this one.
+  email: 'hello@summitstudioagency.com',
+  emailHref: 'mailto:hello@summitstudioagency.com',
+  /** The founder's own address — used only on the About page's Founder
+   *  section, where a signed, personal sign-off is the point. */
+  founderEmail: 'jeff@summitstudioagency.com',
+  founderEmailHref: 'mailto:jeff@summitstudioagency.com',
+  /** Pricing page's custom-quote CTA. */
+  quotesEmail: 'quotes@summitstudioagency.com',
+  quotesEmailHref: 'mailto:quotes@summitstudioagency.com',
+  /** Website Care buyout/cancellation questions (FAQ). */
+  billingEmail: 'billing@summitstudioagency.com',
+  billingEmailHref: 'mailto:billing@summitstudioagency.com',
+  /** Existing-client data requests (Privacy Policy's "Your choices"). */
+  supportEmail: 'support@summitstudioagency.com',
+  supportEmailHref: 'mailto:support@summitstudioagency.com',
 
   logo: {
     primary: 'Summit Studio',
@@ -300,7 +317,7 @@ export const SITE = {
     {
       question: 'Do I own my website?',
       answer:
-        'Yes, for Starter and Growth — once the setup fee is paid, the site and its content are yours, and your domain is always yours regardless of plan. Website Care works differently: since there’s no setup fee, the website remains part of the managed service while you’re subscribed, rather than transferring to you outright. Ask about a buyout if you’d rather own a copy of the site on Website Care.',
+        'Yes, for Starter and Growth — once the setup fee is paid, the site and its content are yours, and your domain is always yours regardless of plan. Website Care works differently: since there’s no setup fee, the website remains part of the managed service while you’re subscribed, rather than transferring to you outright. Email billing@summitstudioagency.com if you’d rather own a copy of the site on Website Care — we can work out a buyout.',
     },
     {
       question: 'Can I upgrade later?',
@@ -310,7 +327,7 @@ export const SITE = {
     {
       question: 'What happens if I cancel Website Care?',
       answer:
-        'Because Website Care never charged a setup fee, the site stays part of the managed service rather than transferring to you the way a paid-in-full Starter or Growth site does. If you’d like to keep the site instead of continuing the plan, ask us about a buyout.',
+        'Because Website Care never charged a setup fee, the site stays part of the managed service rather than transferring to you the way a paid-in-full Starter or Growth site does. If you’d like to keep the site instead of continuing the plan, email billing@summitstudioagency.com and we’ll work out a buyout.',
     },
     {
       question: 'Can I move my site to another developer or host later?',
@@ -335,7 +352,7 @@ export const SITE = {
     {
       question: 'Do you design a custom site, or do I get a template?',
       answer:
-        'Every site is built on one proven Summit Studio design system rather than designed from a blank page each time — that’s what makes the fast turnaround and fixed pricing possible. Within that system, your site is built from your real business details, services, service area, and photos, not generic placeholder content. It’s a shared engine, not a shared site.',
+        'Every site is built on one proven Summit Studio design system rather than designed from a blank page each time — that’s what makes the fast turnaround and fixed pricing possible. Within that system, your site is built from your real business details, services, service area, and photos, not generic placeholder content. It’s a shared system, refined project after project — not a shared site.',
     },
     {
       question: 'Is there a contract for ongoing hosting?',
