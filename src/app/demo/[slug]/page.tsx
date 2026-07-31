@@ -78,9 +78,12 @@ function PackageCard({ business, pkg }: { business: string; pkg: DemoPackageOpti
       </div>
 
       <div className="flex flex-1 flex-col justify-between p-6">
-        <ul className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2.5">
           {pkg.highlights.map((h) => (
-            <li key={h} className="rounded-full bg-surface-50 px-3 py-1 text-xs font-medium text-foreground">
+            <li
+              key={h}
+              className="rounded-full bg-secondary/[0.12] px-3.5 py-1.5 text-sm font-medium text-secondary ring-1 ring-inset ring-secondary/15"
+            >
               {h}
             </li>
           ))}
