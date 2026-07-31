@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import demos from '@/data/demos.json';
 
 /**
  * Transparently reverse-proxies a handful of /demo/<slug> paths to the
@@ -25,28 +26,30 @@ import type { NextRequest } from 'next/server';
  *      `images.remotePatterns` allows fetching from the engine's
  *      domain) — no middleware involvement needed for images at all.
  *
- * Deliberately a small explicit map, not a blind passthrough of whatever
- * slug shows up in the URL — the public-facing name intentionally differs
+ * Not a blind passthrough — the public-facing name intentionally differs
  * from the engine's own internal slug (this domain always spells out
  * -starter/-growth; the engine drops the suffix for its default/Growth
- * tier — see registry.ts's own DEFAULT_BUSINESS_SLUG convention), and this
- * also means a client only ever gets a working /demo/<slug> URL once
- * they're deliberately added here — never automatically, matching "I
- * don't need this built out for all of them at the moment."
+ * tier — see registry.ts's own DEFAULT_BUSINESS_SLUG convention). The map
+ * is DERIVED from src/data/demos.json (the same source the landing pages
+ * render from), so the two can never drift: each demo contributes
+ * `<slug>-growth -> engine.growth` and `<slug>-starter -> engine.starter`.
+ * A prospect only gets working /demo/<slug>-* URLs once their entry is in
+ * demos.json — added automatically by `npm run demo:publish` (see
+ * scripts/publish-demo.mjs), no longer a hand-edited list here.
  *
- * Any slug not in this map (including the curated /demo/martinez-landscaping
- * landing page itself — see src/app/demo/[slug]/page.tsx — which has no
+ * Any slug not in this map (including the curated /demo/<slug> landing
+ * pages themselves — see src/app/demo/[slug]/page.tsx — which have no
  * -starter/-growth suffix) falls through untouched to this site's own
  * normal routing.
  */
 const ENGINE_ORIGIN = 'https://engine.summitstudioagency.com';
 
-const PUBLIC_TO_ENGINE_SLUG: Record<string, string> = {
-  'martinez-landscaping-growth': 'martinez-landscaping',
-  'martinez-landscaping-starter': 'martinez-landscaping-starter',
-  'ayala-landscaping-llc-growth': 'ayala-landscaping-llc',
-  'ayala-landscaping-llc-starter': 'ayala-landscaping-llc-starter',
-};
+const PUBLIC_TO_ENGINE_SLUG: Record<string, string> = Object.fromEntries(
+  demos.flatMap((d) => [
+    [`${d.slug}-growth`, d.engine.growth],
+    [`${d.slug}-starter`, d.engine.starter],
+  ]),
+);
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

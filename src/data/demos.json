@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "martinez-landscaping",
+    "business": "Martinez Landscaping & Tree Services",
+    "tagline": "Landscapes worth coming home to.",
+    "engine": {
+      "growth": "martinez-landscaping",
+      "starter": "martinez-landscaping-starter"
+    },
+    "packages": [
+      {
+        "tier": "Starter",
+        "url": "/demo/martinez-landscaping-starter",
+        "highlights": [
+          "Core service pages",
+          "Same premium design system",
+          "Clean, mobile-first build"
+        ],
+        "image": "/images/portfolio/martinez-landscaping-starter.jpg"
+      },
+      {
+        "tier": "Growth",
+        "url": "/demo/martinez-landscaping-growth",
+        "highlights": [
+          "Interactive before/after gallery",
+          "Services × town SEO matrix",
+          "Wider local-SEO coverage"
+        ],
+        "image": "/images/portfolio/martinez-landscaping-growth.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "ayala-landscaping-llc",
+    "business": "Ayala Landscaping LLC",
+    "tagline": "Property care — on time, done clean.",
+    "engine": {
+      "growth": "ayala-landscaping-llc",
+      "starter": "ayala-landscaping-llc-starter"
+    },
+    "packages": [
+      {
+        "tier": "Starter",
+        "url": "/demo/ayala-landscaping-llc-starter",
+        "highlights": [
+          "Core service pages",
+          "Same premium design system",
+          "Clean, mobile-first build"
+        ],
+        "image": "/images/portfolio/ayala-landscaping-llc-starter.jpg"
+      },
+      {
+        "tier": "Growth",
+        "url": "/demo/ayala-landscaping-llc-growth",
+        "highlights": [
+          "Services × town SEO matrix",
+          "Wider local-SEO coverage",
+          "Advanced on-page SEO"
+        ],
+        "image": "/images/portfolio/ayala-landscaping-llc-growth.jpg"
+      }
+    ]
+  }
+]
