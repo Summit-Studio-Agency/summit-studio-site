@@ -1,0 +1,53 @@
+name: Publish demo landing
+
+# Publishes (or refreshes) a prospect's demo landing page on
+# summitstudioagency.com. Triggered by the "Publish Landing Page" button in
+# the engine's Studio (POST .../publish-landing dispatches this), or manually
+# from the Actions tab. Runs scripts/publish-demo.mjs on a runner that has a
+# real browser (Playwright) — the screenshot capture the engine's serverless
+# Generate call can't do — then commits + pushes, and Vercel deploys.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Engine growth slug (e.g. ayala-landscaping-llc)"
+        required: true
+        type: string
+
+# Let the publish script push its commit back to main.
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-demo-${{ inputs.slug }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Skip Playwright's own browser download here; the next step installs
+      # Chromium + the OS libraries it needs on the runner explicitly.
+      - name: Install dependencies
+        run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Configure git identity
+        run: |
+          git config user.name "summit-studio-bot"
+          git config user.email "bot@users.noreply.github.com"
+
+      - name: Publish demo landing
+        run: node scripts/publish-demo.mjs "${{ inputs.slug }}"
