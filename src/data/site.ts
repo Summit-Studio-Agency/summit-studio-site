@@ -281,8 +281,8 @@ export const SITE = {
       city: 'Leesburg, VA',
       tier: 'Starter',
       description:
-        'The Starter package shown in full: a simpler gallery, fewer service pages, no service-area matrix — same premium design system, at the entry-level tier.',
-      highlights: ['Simplified gallery', 'Core service pages', 'Same premium design system'],
+        'A complete, professional site with the same premium design system, trust, and content as Growth — no cut corners. Starter is intentionally scoped to the essentials: a clean gallery and core service pages, without Growth’s wider service-area coverage and services×town SEO matrix.',
+      highlights: ['Clean project gallery', 'Core service pages', 'Same premium design system'],
       url: 'https://engine.summitstudioagency.com/demo/summit-studio-landscaping-starter',
       image: '/images/portfolio/summit-studio-landscaping-starter.jpg',
     },

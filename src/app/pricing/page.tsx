@@ -36,6 +36,7 @@ const COMPARISON: ComparisonRow[] = [
   { feature: 'Review management', starter: false, growth: true, websiteCare: true },
   { feature: 'Included monthly content edits', starter: false, growth: false, websiteCare: 'Unlimited minor edits' },
   { feature: 'Support level', starter: 'Basic', growth: 'Priority', websiteCare: 'Ongoing, hands-off' },
+  { feature: 'Revisions before launch', starter: '1 round', growth: '2 rounds', websiteCare: 'Included' },
   { feature: 'Who owns the site', starter: 'You, after setup', growth: 'You, after setup', websiteCare: 'Part of the managed service' },
 ];
 
