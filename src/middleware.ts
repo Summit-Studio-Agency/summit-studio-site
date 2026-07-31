@@ -44,6 +44,8 @@ const ENGINE_ORIGIN = 'https://engine.summitstudioagency.com';
 const PUBLIC_TO_ENGINE_SLUG: Record<string, string> = {
   'martinez-landscaping-growth': 'martinez-landscaping',
   'martinez-landscaping-starter': 'martinez-landscaping-starter',
+  'ayala-landscaping-llc-growth': 'ayala-landscaping-llc',
+  'ayala-landscaping-llc-starter': 'ayala-landscaping-llc-starter',
 };
 
 export function middleware(request: NextRequest) {

@@ -34,7 +34,14 @@ export const DEMOS: DemoEntry[] = [
     slug: 'martinez-landscaping',
     business: 'Martinez Landscaping & Tree Services',
     tagline: 'Landscapes worth coming home to.',
+    // Starter listed first so it renders on the left, Growth on the right.
     packages: [
+      {
+        tier: 'Starter',
+        url: '/demo/martinez-landscaping-starter',
+        highlights: ['Core service pages', 'Same premium design system', 'Clean, mobile-first build'],
+        image: '/images/portfolio/martinez-starter.jpg',
+      },
       {
         tier: 'Growth',
         // Same-origin — src/middleware.ts transparently proxies this to the
@@ -42,14 +49,27 @@ export const DEMOS: DemoEntry[] = [
         // in the address bar. See that file's header comment for the
         // public-slug -> engine-slug mapping this depends on.
         url: '/demo/martinez-landscaping-growth',
-        highlights: ['Before/after gallery slider', 'Services × town SEO matrix', 'Emergency-service banner'],
+        highlights: ['Interactive before/after gallery', 'Services × town SEO matrix', 'Wider local-SEO coverage'],
         image: '/images/portfolio/martinez-growth.jpg',
       },
+    ],
+  },
+  {
+    slug: 'ayala-landscaping-llc',
+    business: 'Ayala Landscaping LLC',
+    tagline: 'Property care — on time, done clean.',
+    packages: [
       {
         tier: 'Starter',
-        url: '/demo/martinez-landscaping-starter',
-        highlights: ['Simplified gallery', 'Core service pages', 'Same premium design system'],
-        image: '/images/portfolio/martinez-starter.jpg',
+        url: '/demo/ayala-landscaping-llc-starter',
+        highlights: ['Core service pages', 'Same premium design system', 'Clean, mobile-first build'],
+        image: '/images/portfolio/ayala-starter.jpg',
+      },
+      {
+        tier: 'Growth',
+        url: '/demo/ayala-landscaping-llc-growth',
+        highlights: ['Services × town SEO matrix', 'Wider local-SEO coverage', 'Advanced on-page SEO'],
+        image: '/images/portfolio/ayala-growth.jpg',
       },
     ],
   },
